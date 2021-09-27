@@ -6,6 +6,8 @@ app.use(express.static('public'))
 const path = require ('path')
 const ejs = require('ejs')
 app.set('view engine','ejs')
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true})
 
 app.get('/',(req,res)=>{
 // res.sendFile(path.resolve(__dirname, 'pages/index.html'))
